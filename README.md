@@ -68,5 +68,5 @@ Two new Biomes.
 A new Tree.
 
 
-MinersTech is licenced under CC0 1.0 Universal
+MinersTech is licenced under GPL 2.0
 
