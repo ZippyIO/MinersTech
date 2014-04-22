@@ -111,7 +111,7 @@ public boolean generate(World par1World, Random par2Random, int par3, int par4, 
                                                                  Block block = Block.blocksList[j3];
                                                                  if (block == null || block.canBeReplacedByLeaves(par1World, j2, j1, l2))
                                                                  {
-                                                                         this.setBlockAndMetadata(par1World, j2, j1, l2, MinersTech.ZianiteLeave.blockID, this.metaLeaves);
+                                                                         this.setBlockAndMetadata(par1World, j2, j1, l2, Block.leaves.blockID, this.metaLeaves);
                                                                  }
                                                          }
                                                  }

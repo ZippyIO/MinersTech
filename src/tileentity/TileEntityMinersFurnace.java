@@ -226,7 +226,7 @@ public class TileEntityMinersFurnace extends TileEntity implements ISidedInvento
      */
     public int getCookProgressScaled(int par1)
     {
-        return this.furnaceCookTime * par1 / 160;
+        return this.furnaceCookTime * par1 / 14;
     }
 
     @SideOnly(Side.CLIENT)
@@ -239,7 +239,7 @@ public class TileEntityMinersFurnace extends TileEntity implements ISidedInvento
     {
         if (this.currentItemBurnTime == 0)
         {
-            this.currentItemBurnTime = 160;
+            this.currentItemBurnTime = 14;
         }
 
         return this.furnaceBurnTime * par1 / this.currentItemBurnTime;
@@ -293,7 +293,7 @@ public class TileEntityMinersFurnace extends TileEntity implements ISidedInvento
             {
                 ++this.furnaceCookTime;
 
-                if (this.furnaceCookTime == 160)
+                if (this.furnaceCookTime == 14)
                 {
                     this.furnaceCookTime = 0;
                     this.smeltItem();

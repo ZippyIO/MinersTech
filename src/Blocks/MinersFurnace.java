@@ -48,6 +48,7 @@ public class MinersFurnace extends BlockContainer
     {
         super(par1, Material.iron);
         this.isActive = par2;
+        this.setHardness(8.0F);
     }
 
     /**

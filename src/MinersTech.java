@@ -244,7 +244,7 @@ public class MinersTech {
 		this.initConfiguration(event);
         LanguageRegistry.instance().addStringLocalization("itemGroup.MinersTech", "MinersTech");	
         
-            ZondoPick = EnumHelper.addToolMaterial("ZondoPick", 3, 3651, 30.0F, 19.0F, 55);
+            ZondoPick = EnumHelper.addToolMaterial("ZondoPick", 4, 550, 25.0F, 10.0F, 55);
             CommienitePick = EnumHelper.addToolMaterial("CommienitePick", 3, 10000, 42.0F, 24.0F, 70);
             Zondo = EnumHelper.addArmorMaterial("Zondo", 3651, new int[] {2, 9, 6, 2}, 55);
                     
@@ -252,8 +252,7 @@ public class MinersTech {
 	        CommieniteBlock = new CommieniteBlock(MinersTech.CommieniteBlockID, Material.rock).setUnlocalizedName("CommieniteBlock").setCreativeTab(MinersTech.MinersTechTab);
 	        ZianiteLog = new ZianiteLog(MinersTech.ZianiteLogID, Material.wood).setUnlocalizedName("ZianiteLog").setStepSound(Block.soundWoodFootstep).setCreativeTab(MinersTech.MinersTechTab);
 	        ZianiteCoal = new ZianiteCoal(MinersTech.ZianiteCoalID).setUnlocalizedName("ZianiteCoal").setCreativeTab(MinersTech.MinersTechTab);;
-	        ZianiteLeave = new ZianiteLeave(MinersTech.ZianiteLeaveID, Material.leaves).setUnlocalizedName("ZianiteLeave").setCreativeTab(MinersTech.MinersTechTab)
-	        		.setLightOpacity(1000).setLightValue(1.0F).setStepSound(Block.soundGrassFootstep);
+	        ZianiteLeave = new ZianiteLeave(MinersTech.ZianiteLeaveID).setUnlocalizedName("ZianiteLeave").setCreativeTab(MinersTech.MinersTechTab).setHardness(0.2F).setLightOpacity(1).setStepSound(Block.soundGrassFootstep);
 	        
             oreZondo = new oreZondo(MinersTech.oreZondoID, Material.rock).setUnlocalizedName("oreZondo").setHardness(3.0F).setCreativeTab(MinersTech.MinersTechTab);
             ingotZondo = new ingotZondo(MinersTech.ingotZondoID).setUnlocalizedName("ingotZondo").setCreativeTab(MinersTech.MinersTechTab);
@@ -421,6 +420,18 @@ public class MinersTech {
 			    "SRS",
 				'Z', MinersTech.ingotZondo, 'R', Item.redstone, 'S', Item.stick
 			});
+            GameRegistry.addRecipe(new ItemStack(MinersTech.blockMinerFurnaceIdle), new Object[]{
+			    "III",
+			    "IZI",
+			    "III",
+				'Z', MinersTech.ingotZondo, 'I', Item.ingotIron
+			});
+            GameRegistry.addRecipe(new ItemStack(MinersTech.blockGrinderIdle), new Object[]{
+			    "BIB",
+			    "ZCZ",
+			    "BIB",
+				'Z', MinersTech.ingotZondo, 'I', Item.ingotIron, 'B', MinersTech.MachineBox, 'C', MinersTech.MachineCasing
+			});
             
             FurnaceRecipes.smelting().addSmelting(MinersTech.oreZondo.blockID, 0, new ItemStack(MinersTech.ingotZondo), 0.2F);
             FurnaceRecipes.smelting().addSmelting(MinersTech.ZianiteLog.blockID, 0, new ItemStack(MinersTech.ZianiteCoal), 0.2F);
@@ -450,11 +461,6 @@ public class MinersTech {
                         OreDictionary.registerOre("oreZondo", oreZondo);
                         OreDictionary.registerOre("logZianite", ZianiteLog);
                         OreDictionary.registerOre("coalZianite", ZianiteCoal);
-
-                        GrindEmUp = new Achievement(4503, "GrindEmUp", 0, 0, MinersTech.blockGrinderIdle, null).registerAchievement();
-                        this.addAchievementName("GrindEmUp", "Ginrd Em Up!");
-                        this.addAchievementDesc("GrindEmUp", "You Crafted Your First Grinder!");
-
 
 
         }
